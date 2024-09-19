@@ -43,16 +43,19 @@ def start_timer():
     if reps % 8 == 0:
         count_down(long_break_sec)
         timer_label.config(text="Break", fg = RED)
+        window.attributes("-topmost", True) #popup for long break
 
     #if it is the 2nd/4th/6th rep:
     elif reps % 2 == 0:
         count_down(short_break_sec)
         timer_label.config(text="Break", fg = PINK)
+        window.attributes("-topmost", True) #popup for short break
 
     else:
         # if it's the 1st/3rd/5th/7th break
         count_down(work_sec)
         timer_label.config(text="Work", fg = GREEN)
+        window.attributes("-topmost", False) #remove popup for work time
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 
